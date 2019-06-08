@@ -1,0 +1,79 @@
+AddLocationForm:
+<AddLocationForm>:
+    orientation: "vertical"
+    
+    txt1:textIn1
+    txt2:textIn2
+    my_map: map
+    plot: plots
+          
+            
+    BoxLayout: 
+        height: "20dp"
+        size_hint_y: 0.5               
+        id: plots
+        
+    BoxLayout:     
+        size_hint_y: 0.5
+        MapView:   
+                 
+            lat: 0
+            lon: 0
+            zoom: 1
+            id: map
+        
+        TextInput:            
+            height:"248dp"
+            size_hint_y: None
+           
+            font_size: 13
+            id: textIn2        
+        
+    BoxLayout:
+        height: "25dp"
+        size_hint_y: None
+        Label:
+            size_hint_x:15
+            text:'Nazwa pliku (format: nazwa.gpx)'
+        
+        TextInput:            
+            size_hint_x: 22
+            font_size: 12
+            id: textIn1 
+           
+    BoxLayout:
+        height: "20dp"
+        size_hint_y: None       
+        Button:                    
+            size_hint_x: 25
+            text: "Rysuj profil wysokosciowy"
+            on_press: root.rysuj_wykres1()  
+            
+    BoxLayout:
+        height: "20dp"
+        size_hint_y: None       
+        Button:                    
+            size_hint_x: 25
+            text: "Rysuj wykres zaleznosci predkosci od odleglosci"
+            on_press: root.rysuj_wykres2()              
+                    
+
+    BoxLayout:
+        height: "20dp"
+        size_hint_y: None        
+        Button:                    
+            size_hint_x: 25
+            text: "Oblicz statystyki"
+            on_press: root.analyse_file()
+            
+    BoxLayout:
+        height: "20dp"
+        size_hint_y: None        
+        Button:                    
+            size_hint_x: 25
+            text: "Wyczysc"
+            on_press: root.czyszczenie()
+            
+
+
+    
